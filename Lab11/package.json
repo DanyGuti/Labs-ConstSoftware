@@ -1,7 +1,7 @@
 {
-  "name": "lab11",
+  "name": "labs-constsoftware",
   "version": "1.0.0",
-  "description": "",
+  "description": "Laboratories in pairs with Marie Blue",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -9,18 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanyGuti/Construccion_Software.git"
+    "url": "git+https://github.com/DanyGuti/Labs-ConstSoftware.git"
   },
   "keywords": [
-    "git",
-    "lab11"
+    "routes",
+    "modules",
+    "express"
   ],
-  "author": "Daniel Gtz",
+  "author": "Dany, Azul",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DanyGuti/Construccion_Software/issues"
+    "url": "https://github.com/DanyGuti/Labs-ConstSoftware/issues"
   },
-  "homepage": "https://github.com/DanyGuti/Construccion_Software#readme",
+  "homepage": "https://github.com/DanyGuti/Labs-ConstSoftware#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },

@@ -1,16 +1,15 @@
 const express = require('express');
 const app = express();
-const myRoutes = require('./routes/home');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// const myRoutes = require('./Lab11/routes/home');
+// app.use(bodyParser.json());
 
-app.get('/', (request, response) => {
-    res.sendFile(__dirname + '/index.html');
+app.use("/", (request, response, next) => {
+    console.log('Otro middleware!');
+    response.send('¡Hola mundo!'); //Manda la respuesta
 });
-app.get('/comprar', function (req, res) {
-    res.sendFile(__dirname + '/comprar.html');
-});
-app.use('/home', myRoutes);
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use('/home', myRoutes);
+
 
 //Middleware
 
