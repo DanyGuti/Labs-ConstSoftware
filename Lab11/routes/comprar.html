@@ -12,13 +12,13 @@
     <div class="collapse navbar-collapse justify-content-center">
         <ul class="navbar-nav text-center">
             <li class=" hover-shadow p-3 d-lg-block nav-item active text-center">
-                <a class="text-muted text-decoration-none">Home</a>
+                <a class="text-muted text-decoration-none" method="GET" href="/">Home</a>
             </li>
             <li class="p-3 d-lg-block nav-item active text-center">
                 <a class="text-muted text-decoration-none">Landing Page</a>
             </li>
             <li class="p-3 d-lg-block nav-item active text-center">
-                <a class="text-muted text-decoration-none">Comprar</a>
+                <a class="text-muted text-decoration-none" method="GET" href="/buy/comprar">Comprar</a>
             </li>
         </ul>
     </div>
@@ -42,9 +42,7 @@
         </div>
         <div class="row text-center p-5">
             <div class="col">
-                <button type="submit" class="btn btn-primary text-center">
-                    Ordenar
-                </button>
+                <input type="submit" value="Ir a carrito" class="btn btn-primary text-center">
             </div>
         </div>
     </form>
