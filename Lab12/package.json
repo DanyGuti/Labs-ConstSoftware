@@ -1,0 +1,25 @@
+{
+  "name": "lab12",
+  "version": "1.0.0",
+  "description": "Laboratory 12",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanyGuti/Labs-ConstSoftware.git"
+  },
+  "keywords": [
+    "Partials",
+    "Express",
+    "pug",
+    "ejs"
+  ],
+  "author": "Daniel Gutierrez Gomez and Azul Rosales Nachon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanyGuti/Labs-ConstSoftware/issues"
+  },
+  "homepage": "https://github.com/DanyGuti/Labs-ConstSoftware#readme"
+}
