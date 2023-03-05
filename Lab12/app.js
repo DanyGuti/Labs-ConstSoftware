@@ -12,15 +12,10 @@ app.set('views','views/partials');
 app.use(express.static(path.join(__dirname)));
 
 const homeModule = require("./routes/home");
-// const buyModule = require("./routes/buy");
+const buyModule = require("./routes/buy");
 
 app.use('/', homeModule);
-// // First module --> index
-// app.get('/',(req, res) =>{
-//     res.render('index');
-// });
+app.use('/buy', buyModule);
 
-// Second module --> buy
-// app.use('/buy', buyModule);
 
 app.listen(3000);
