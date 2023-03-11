@@ -13,9 +13,11 @@ app.use(express.static(path.join(__dirname)));
 
 const homeModule = require("./routes/home");
 const buyModule = require("./routes/buy");
+const newProductModule = require("./routes/nuevo");
 
 app.use('/', homeModule);
 app.use('/buy', buyModule);
+app.use('/nuevo', newProductModule);
 
 
 app.listen(3000);

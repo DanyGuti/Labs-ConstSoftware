@@ -35,6 +35,13 @@
                             <script> total += Number("<%= product.precio%>")</script>
                         </li>
                     <% } %>
+                    <% if (maruchan=="on" && product.handle == "@Maruchan"){ %>
+                        <li class="text-center text-zinc-50">
+                            <%= product.nombre %>:
+                            $<%= product.precio %>
+                            <script> total += Number("<%= product.precio%>")</script>
+                        </li>
+                    <% } %>
                 <%} %>
         </ul>
             <p class="text-zinc-100 py-5 text-center"> Tu total es de:

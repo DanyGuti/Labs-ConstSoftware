@@ -6,4 +6,8 @@ router.get('/',(req, res) =>{
     res.render(__dirname + '/../views/index');
 });
 
+router.post('/',(req, res) =>{
+    res.render(__dirname + '/../views/index');
+});
+
 module.exports = router;

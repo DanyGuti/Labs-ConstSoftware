@@ -1,64 +1,40 @@
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
 
 let router = express.Router();
 
-const isObjectEmpty = (objectName) => {
-    return Object.keys(objectName).length === 0;
-}
-router.get('/comprar', (req, res) => {
-    res.render(__dirname + '/../views/comprar');
-});
+const productsController = require('../controllers/products.controller');
+router.get('/comprar', productsController.get_lista);
+router.post('/comprar', productsController.post_nuevo);
 
-const products = [
-    {
-        nombre: "Cacahuates",
-        imagen: "",
-        handle: "@cacahuates",
-        precio: 20,
-    },
-    {
-        nombre: "Pollo Frito",
-        imagen: "",
-        handle: "@pollo",
-        precio: 200,
-    },
-    {
-        nombre: "Flores",
-        imagen: "",
-        handle: "@flores",
-        precio: 250,
-    },
-]
+router.get('/carrito', productsController.get_cart);
+router.post('/carrito', productsController.post_cart);
 
-router.get('/carrito', (req, res) => {
-    let data = req.body;
-    const { cacahuates, PF, flores } = req.body;
-    if (isObjectEmpty(data)) res.render(__dirname + '/../views/comprar');
-    else {
-        let dataJSON = JSON.parse(JSON.stringify(data));
-        var bufferData = "";
-        if (dataJSON.cacahuates == "on") bufferData += "Cacahuates";
-        if (dataJSON.PF == "on") bufferData += " Pollo Frito ";
-        if (dataJSON.flores == "on") bufferData += " Flores";
-        res.render(__dirname + '/../views/carrito', { caca: cacahuates, pf: PF, flor: flores, products: products });
-    }
-});
+// router.get('/nuevo', productsController.get_nuevo);
+// router.post('/nuevo', productsController.post_nuevo);
 
-router.post('/carrito', (req, res) => {
-    let data = req.body;
-    const {cacahuates, PF, flores} = req.body;
-    if (isObjectEmpty(data)) res.render(__dirname + '/../views/comprar');
-    else {
-        let dataJSON = JSON.parse(JSON.stringify(data));
-        var bufferData = "";
-        if (dataJSON.cacahuates == "on") bufferData += "Cacahuates";
-        if (dataJSON.PF == "on") bufferData += " Pollo Frito ";
-        if (dataJSON.flores == "on") bufferData += " Flores";
-        res.render(__dirname + '/../views/carrito', {caca:cacahuates, pf:PF, flor:flores, products:products});
-    }
-});
+//
+// Better to make a model class and then fetching data
+//
+// const products = [
+    //     {
+//         nombre: "Cacahuates",
+//         imagen: "",
+//         handle: "@cacahuates",
+//         precio: 20,
+//     },
+//     {
+//         nombre: "Pollo Frito",
+//         imagen: "",
+//         handle: "@pollo",
+//         precio: 200,
+//     },
+//     {
+//         nombre: "Flores",
+//         imagen: "",
+//         handle: "@flores",
+//         precio: 250,
+//     },
+// ]
 
 
 module.exports = router;
