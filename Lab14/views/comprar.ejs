@@ -57,5 +57,10 @@
     <div class="py-10 text-xl">
         <input class="p-5 bg-slate-400 text-zinc-100 cursor-pointer rounded-lg" type="submit" value="Ir a carrito" class="btn btn-primary text-center">
     </div>
+    <% if(last_added_product != '') { %>
+        <div class="py-10 text-xl">
+            Last added product, was: <%= last_added_product%>
+        </div>
+    <% } %>
 </form>
 </body>

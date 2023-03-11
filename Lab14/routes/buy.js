@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+
 
 let router = express.Router();
 
@@ -9,32 +11,9 @@ router.post('/comprar', productsController.post_nuevo);
 router.get('/carrito', productsController.get_cart);
 router.post('/carrito', productsController.post_cart);
 
-// router.get('/nuevo', productsController.get_nuevo);
-// router.post('/nuevo', productsController.post_nuevo);
-
-//
-// Better to make a model class and then fetching data
-//
-// const products = [
-    //     {
-//         nombre: "Cacahuates",
-//         imagen: "",
-//         handle: "@cacahuates",
-//         precio: 20,
-//     },
-//     {
-//         nombre: "Pollo Frito",
-//         imagen: "",
-//         handle: "@pollo",
-//         precio: 200,
-//     },
-//     {
-//         nombre: "Flores",
-//         imagen: "",
-//         handle: "@flores",
-//         precio: 250,
-//     },
-// ]
+router.get('/setcookie', productsController.cookieParser);
+router.get('/getcookie', productsController.getCookie);
+router.get('/delcookie', productsController.deleteCookie);
 
 
 module.exports = router;
