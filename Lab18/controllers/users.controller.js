@@ -5,7 +5,7 @@ exports.get_signup = (req, res) => {
     res.render(__dirname + '/../views/signup',{
         isLoggedin: req.session.isLoggedin || false,
         nombreU: req.session.nombreU || '',
-        csrfToken: req.csrfToken(),
+        csrfToken: req.csrfToken()
     });
 };
 
