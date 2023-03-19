@@ -15,8 +15,7 @@
             </h1>
         </div>
     <% } %>
-    <form action="/users/login" method="POST" class="flex justify-center justify-items-center text-center w-full">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <form action="/login" method="POST" class="flex justify-center justify-items-center text-center w-full">
         <div class="flex flex-col text-center w-full">
             <div class="pt-5">
                 <label for="email"> User name: </label>
@@ -37,6 +36,5 @@
             </div>
         </div>
     </form>
-
 </body>
 </html>

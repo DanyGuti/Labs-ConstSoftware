@@ -1,28 +1,28 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const app = express();
 const path = require('path');
 const csrf = require('csurf');
-const isAuth = require('./util/is-auth');
+const isAuth = require('./util/is-auth.js');
 const session = require('express-session');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.set('view engine', 'ejs');
+app.set('views', 'views/partials');
+
 app.use(session({
     secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste',
     resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
-const csrfProtection = csrf();
-app.use(csrfProtection);
+// const csrfProtection = csrf();
+// app.use(csrfProtection);
 
-app.use(cookieParser());
-app.set('view engine', 'ejs');
-app.set('views','views/partials');
-
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname)));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const usersModule = require("./routes/users.routes");
 const homeModule = require("./routes/home.routes");
