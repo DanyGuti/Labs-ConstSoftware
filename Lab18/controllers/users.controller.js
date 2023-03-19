@@ -5,7 +5,7 @@ exports.get_signup = (req, res) => {
     res.render(__dirname + '/../views/signup',{
         isLoggedIn: req.session.isLoggedIn || false,
         nombreU: req.session.nombreU || '',
-        // csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
     });
 };
 
@@ -35,11 +35,12 @@ exports.get_login = (req, res) => {
     if(req.session.message != ''){
         msg = req.session.message = '';
     }
+    console.log(req.csrfToken());
     res.render(__dirname + '/../views/login',{
         message: msg,
         isLoggedIn: req.session.isLoggedIn || false,
         nombreU: req.session.nombreU || '',
-        // csrfToken: req.csrfToken(),
+        csrfToken: req.csrfToken(),
     });
 };
 

@@ -16,14 +16,14 @@ app.use(session({
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
-// const csrfProtection = csrf();
-// app.use(csrfProtection);
 
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname)));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const csrfProtection = csrf();
+app.use(csrfProtection);
 const usersModule = require("./routes/users.routes");
 const homeModule = require("./routes/home.routes");
 const buyModule = require("./routes/buy.routes");

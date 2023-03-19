@@ -16,6 +16,7 @@
         <h1 class="text-center font-bold text-xl"> ShopMarie</h1>
         <div class="container grid-cols-2 grid-rows-4 justify-items-center">
             <form class="text-center p-10" action="/signup" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <label class="block text-gray-700 text-lg font-bold mb-2" for="email">Nombre</label>
                 <div class="relative inline-block space-x-1 right-2">
                     <input onmouseover="" onkeypress=""
